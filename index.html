@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BizJourney | رحلة الأعمال - تطبيق تعليمي تفاعلي لريادة الأعمال والتجارة العالمية.">
+  <title>رحلة الأعمال | BizJourney</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="site-lock-overlay" class="hidden">
+    <div class="lock-card card">
+      <div class="icon-circle" aria-hidden="true">
+        <i data-lucide="lock"></i>
+      </div>
+      <h2 data-translate="lock.title">النظام مغلق مؤقتًا</h2>
+      <p data-translate="lock.subtitle">أدخل رمز الدخول للمتابعة</p>
+      <div class="lock-actions">
+        <input id="lock-code" type="password" placeholder="BIZ2025" aria-label="رمز الدخول">
+        <button id="lock-submit" class="btn-primary" data-translate="lock.submit">دخول</button>
+      </div>
+      <p id="lock-error" class="error-text" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <header class="app-header glass">
+    <div class="brand">
+      <i data-lucide="rocket" aria-hidden="true"></i>
+      <span data-translate="brand">رحلة الأعمال | BizJourney</span>
+    </div>
+    <nav class="top-nav">
+      <button class="nav-link" data-target="landing-view" data-translate="nav.home">الرئيسية</button>
+      <button class="nav-link" data-target="ownership-view" data-translate="nav.ownership">الهياكل</button>
+      <button class="nav-link" data-target="plan-view" data-translate="nav.plan">الخطة</button>
+      <button class="nav-link" data-target="global-view" data-translate="nav.global">العالمية</button>
+      <button class="nav-link" data-target="quiz-view" data-translate="nav.quiz">الاختبار</button>
+      <button class="nav-link" data-target="login-view" data-translate="nav.login">تسجيل الدخول</button>
+      <button id="nav-admin-item" class="nav-link hidden" data-target="admin-view" data-translate="nav.admin">لوحة التحكم</button>
+    </nav>
+    <div class="header-actions">
+      <button id="lang-toggle" class="btn-ghost">English</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section id="landing-view" class="view active">
+      <div class="hero card">
+        <div class="card-header">
+          <p class="badge" data-translate="landing.badge">منهج مصغّر</p>
+          <h1 data-translate="landing.title">ابدأ رحلتك في عالم الأعمال</h1>
+          <p data-translate="landing.subtitle">تطبيق تفاعلي يساعدك على فهم الملكية، بناء خطة مشروع، واستكشاف التصدير.</p>
+        </div>
+        <div class="card-body grid-2">
+          <div class="feature">
+            <i data-lucide="flag"></i>
+            <div>
+              <h3 data-translate="landing.feature1.title">الهياكل القانونية</h3>
+              <p data-translate="landing.feature1.desc">تعرف على أنواع الملكية والمسؤوليات لكل شكل.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <i data-lucide="map"></i>
+            <div>
+              <h3 data-translate="landing.feature2.title">بناء خطة عمل</h3>
+              <p data-translate="landing.feature2.desc">اتبع خطوات بسيطة لصياغة خطة متكاملة.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <i data-lucide="globe-2"></i>
+            <div>
+              <h3 data-translate="landing.feature3.title">التجارة العالمية</h3>
+              <p data-translate="landing.feature3.desc">حاكي قرارات التصدير واختر الأسواق المناسبة.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <i data-lucide="medal"></i>
+            <div>
+              <h3 data-translate="landing.feature4.title">اختبار نهائي</h3>
+              <p data-translate="landing.feature4.desc">قيّم فهمك واحفظ أفضل نتيجة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-primary nav-link" data-target="ownership-view" data-translate="landing.cta">ابدأ التعلم</button>
+          <button class="btn-secondary nav-link" data-target="quiz-view" data-translate="landing.cta.quiz">جرّب الاختبار</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="ownership-view" class="view hidden">
+      <div class="section-header">
+        <div>
+          <p class="badge" data-translate="ownership.badge">الوحدة 1</p>
+          <h2 data-translate="ownership.title">هياكل الملكية</h2>
+          <p data-translate="ownership.subtitle">قارن بين الأنواع المختلفة واختر ما يناسب مشروعك.</p>
+        </div>
+        <button class="btn-secondary nav-link" data-target="plan-view" data-translate="ownership.toPlan">تابع إلى الخطة</button>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-translate="ownership.sole.title">ملكية فردية</h3>
+            <span class="pill" data-translate="ownership.sole.badge">بسيطة</span>
+          </div>
+          <ul class="card-body list">
+            <li data-translate="ownership.sole.liability">مسؤولية شخصية كاملة عن الديون.</li>
+            <li data-translate="ownership.sole.capital">رأس المال محدود غالبًا بمدخراتك.</li>
+            <li data-translate="ownership.sole.control">اتخاذ القرار سريع وفردي.</li>
+            <li data-translate="ownership.sole.speed">الانطلاق سريع مع متطلبات قليلة.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-translate="ownership.partner.title">شركة أشخاص</h3>
+            <span class="pill" data-translate="ownership.partner.badge">تشاركية</span>
+          </div>
+          <ul class="card-body list">
+            <li data-translate="ownership.partner.liability">مسؤولية مشتركة بين الشركاء.</li>
+            <li data-translate="ownership.partner.capital">رأس مال أكبر مع تعدد المساهمين.</li>
+            <li data-translate="ownership.partner.control">قرارات جماعية تحتاج لتنسيق.</li>
+            <li data-translate="ownership.partner.speed">إجراءات تأسيس متوسطة السرعة.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-translate="ownership.corp.title">شركة مساهمة / محدودة</h3>
+            <span class="pill" data-translate="ownership.corp.badge">حماية</span>
+          </div>
+          <ul class="card-body list">
+            <li data-translate="ownership.corp.liability">مسؤولية محدودة على حدود الحصة.</li>
+            <li data-translate="ownership.corp.capital">إمكانية جذب استثمارات أكبر.</li>
+            <li data-translate="ownership.corp.control">مجلس إدارة ولوائح داخلية.</li>
+            <li data-translate="ownership.corp.speed">تأسيس أطول لكنه يوفر حماية قانونية.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quiz-area card">
+        <div class="card-header">
+          <h3 data-translate="ownership.quiz.title">اختبار سريع</h3>
+          <p data-translate="ownership.quiz.subtitle">أجب عن الأسئلة واحصل على تغذية راجعة فورية.</p>
+        </div>
+        <div id="ownership-quiz" class="quiz-list"></div>
+        <div class="quiz-footer">
+          <button id="ownership-submit" class="btn-primary" data-translate="ownership.quiz.submit">عرض النتيجة</button>
+          <div id="ownership-score" class="score"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plan-view" class="view hidden">
+      <div class="section-header">
+        <div>
+          <p class="badge" data-translate="plan.badge">الخطة</p>
+          <h2 data-translate="plan.title">مُنشئ خطة العمل</h2>
+          <p data-translate="plan.subtitle">اتبع الخطوات الست لبلورة فكرتك بسرعة.</p>
+        </div>
+        <div class="progress" aria-live="polite">
+          <span id="plan-progress-text">1 / 6</span>
+          <div class="progress-bar"><div id="plan-progress-bar"></div></div>
+        </div>
+      </div>
+
+      <div id="plan-stepper" class="stepper"></div>
+      <div id="plan-fields" class="card"></div>
+      <div class="wizard-actions">
+        <button id="plan-prev" class="btn-ghost" data-translate="plan.prev">السابق</button>
+        <button id="plan-next" class="btn-primary" data-translate="plan.next">التالي</button>
+      </div>
+
+      <div id="plan-summary" class="card hidden">
+        <div class="card-header">
+          <h3 data-translate="plan.summary.title">ملخص خطتك</h3>
+          <p data-translate="plan.summary.subtitle">احتفظ به وشاركه مع فريقك.</p>
+        </div>
+        <div id="plan-summary-content" class="card-body"></div>
+        <div class="wizard-actions">
+          <button id="plan-copy" class="btn-secondary" data-translate="plan.copy">نسخ الملخص</button>
+          <button class="btn-primary nav-link" data-target="global-view" data-translate="plan.toGlobal">الانتقال إلى التجارة العالمية</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="global-view" class="view hidden">
+      <div class="section-header">
+        <div>
+          <p class="badge" data-translate="global.badge">الوحدة 2</p>
+          <h2 data-translate="global.title">التوسع العالمي</h2>
+          <p data-translate="global.subtitle">اختر المنتج والسوق لتحصل على نصائح سريعة.</p>
+        </div>
+        <button class="btn-secondary nav-link" data-target="quiz-view" data-translate="global.toQuiz">الاختبار النهائي</button>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-translate="global.sim.title">محاكي التجارة</h3>
+            <p data-translate="global.sim.subtitle">جرّب سيناريوهات تصدير متنوعة.</p>
+          </div>
+          <div class="card-body form-grid">
+            <label>
+              <span data-translate="global.product">نوع المنتج</span>
+              <select id="global-product">
+                <option value="digital" data-translate="global.product.digital">منتج رقمي</option>
+                <option value="clothing" data-translate="global.product.clothing">ملابس</option>
+                <option value="food" data-translate="global.product.food">أغذية</option>
+              </select>
+            </label>
+            <label>
+              <span data-translate="global.region">المنطقة المستهدفة</span>
+              <select id="global-region">
+                <option value="mena" data-translate="global.region.mena">الشرق الأوسط</option>
+                <option value="europe" data-translate="global.region.europe">أوروبا</option>
+                <option value="asia" data-translate="global.region.asia">آسيا</option>
+              </select>
+            </label>
+            <label>
+              <span data-translate="global.scale">حجم العملية</span>
+              <select id="global-scale">
+                <option value="small" data-translate="global.scale.small">صغير</option>
+                <option value="medium" data-translate="global.scale.medium">متوسط</option>
+                <option value="large" data-translate="global.scale.large">كبير</option>
+              </select>
+            </label>
+          </div>
+          <div class="card-body">
+            <button id="global-run" class="btn-primary" data-translate="global.run">شغّل المحاكي</button>
+            <div id="global-result" class="result-box"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-translate="global.tips.title">نصائح التوسع</h3>
+          </div>
+          <ul class="card-body list">
+            <li data-translate="global.tip1">افهم لوائح الجمارك وبيانات التصدير لكل سوق.</li>
+            <li data-translate="global.tip2">جهّز خطة لوجستية بديلة لتقليل المخاطر.</li>
+            <li data-translate="global.tip3">وائم المنتج مع الثقافة المحلية والتشريعات.</li>
+            <li data-translate="global.tip4">ابدأ بحجم صغير لاختبار الطلب ثم وسّع تدريجيًا.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz-view" class="view hidden">
+      <div class="section-header">
+        <div>
+          <p class="badge" data-translate="final.badge">التقييم</p>
+          <h2 data-translate="final.title">الاختبار النهائي</h2>
+          <p data-translate="final.subtitle">أسئلة تجمع بين الملكية، التخطيط، والتجارة العالمية.</p>
+        </div>
+        <div class="score" id="best-score" data-translate="final.best">أفضل نتيجة: 0 / 20</div>
+      </div>
+      <div id="final-quiz" class="quiz-list"></div>
+      <div class="quiz-footer">
+        <button id="final-submit" class="btn-primary" data-translate="final.submit">إرسال الإجابات</button>
+        <div id="final-score" class="score"></div>
+      </div>
+    </section>
+
+    <section id="login-view" class="view hidden">
+      <div class="card auth-card">
+        <div class="card-header">
+          <h2 data-translate="login.title">دخول المشرف</h2>
+          <p data-translate="login.subtitle">استخدم بيانات الدخول التجريبية.</p>
+        </div>
+        <div class="card-body form-grid">
+          <label>
+            <span data-translate="login.email">البريد الإلكتروني</span>
+            <input type="email" id="login-email" placeholder="admin@bizjourney.app">
+          </label>
+          <label>
+            <span data-translate="login.password">كلمة المرور</span>
+            <input type="password" id="login-password" placeholder="BizJourney2025!">
+          </label>
+        </div>
+        <div class="wizard-actions">
+          <button id="login-submit" class="btn-primary" data-translate="login.button">تسجيل الدخول</button>
+          <p id="login-message" class="info" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-view" class="view hidden">
+      <div class="section-header">
+        <div>
+          <p class="badge" data-translate="admin.badge">المشرف</p>
+          <h2 data-translate="admin.title">لوحة التحكم</h2>
+          <p data-translate="admin.subtitle">إدارة البيانات المخزنة وخطط المستخدمين.</p>
+        </div>
+        <div class="wizard-actions">
+          <button id="clear-data" class="btn-ghost" data-translate="admin.clear">مسح البيانات</button>
+          <button id="logout" class="btn-secondary" data-translate="admin.logout">تسجيل الخروج</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-translate="admin.plan.title">الخطط المحفوظة</h3>
+          </div>
+          <div class="card-body" id="admin-plan"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-translate="admin.quiz.title">نتائج الاختبارات</h3>
+          </div>
+          <div class="card-body" id="admin-quiz"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-link" data-target="landing-view">
+      <i data-lucide="home"></i>
+      <span data-translate="nav.home">الرئيسية</span>
+    </button>
+    <button class="nav-link" data-target="ownership-view">
+      <i data-lucide="layers"></i>
+      <span data-translate="nav.ownership">الوحدات</span>
+    </button>
+    <button class="nav-link" data-target="plan-view">
+      <i data-lucide="clipboard-check"></i>
+      <span data-translate="nav.plan">الخطة</span>
+    </button>
+    <button class="nav-link" data-target="global-view">
+      <i data-lucide="globe"></i>
+      <span data-translate="nav.global">العالمية</span>
+    </button>
+  </nav>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
